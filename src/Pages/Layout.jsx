@@ -8,6 +8,7 @@ import Login from './Login'
 import SignUp from './SignUp'
 import Navbar from '../Components/Navbar'
 import Container from './Container'
+import Home from './Home'
 
 const Layout = () => {
 
@@ -27,17 +28,13 @@ const Layout = () => {
                         {
                             path:'signup',
                             element:<SignUp/>
-                        }
+                        },
+                        {
+                            path:'/home',
+                            element:<Home/>
+                        },
                     ], 
                 }
-                // {
-                //     path:'/login',
-                //     element:<Login/>
-                // },
-                // {
-                //     path:'/signup',
-                //     element:<SignUp/>
-                // } 
             ]
         }
     ])

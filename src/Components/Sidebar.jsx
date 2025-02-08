@@ -1,18 +1,16 @@
 import React from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
-import CardLogo from '../assets/CardLogo.png'
+import { NavLink } from 'react-router-dom'
+import { MdHome , MdDashboardCustomize } from "react-icons/md";
 
 const Sidebar = () => {
   return (
     <div className='border-2 border-black w-fit'>
       <div className='flex justify-between'>
         <div className='bg-blue-300 w-52 h-dvw'>
-          <div>
-            <img src={CardLogo} className='size-20 m-8 mx-14' alt="Logo" />
-          </div>
           <div className='mx-5'>
             <ul>
-              <li className='my-3'><NavLink to='/'>Home</NavLink></li>
+              <li className='my-3'><NavLink to='/home' className='flex text-xl'><MdHome className='size-7 mt-0.5 mx-2'/>Home</NavLink></li>
+              <li><NavLink to='/dashboard' className='flex text-xl'><MdDashboardCustomize className='size-6 mt-0.5 mx-2'/>Dashboard</NavLink></li>
               {/* <li className='my-3 relative'><NavLink to='/dashboard'>Dashboard</NavLink>
               <div className='absolute hidden'>
                 <li className='my-3 block'><NavLink to='card'>Card</NavLink></li>
@@ -36,7 +34,6 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      {/* <Outlet /> */}
     </div>
   )
 }
