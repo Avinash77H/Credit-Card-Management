@@ -4,28 +4,40 @@ import Dashboard from './Dashboard'
 import Sidebar from '../Components/Sidebar'
 import History from './History'
 import Card from './Card'
+import Login from './Login'
+import SignUp from './SignUp'
+import Navbar from '../Components/Navbar'
+import Container from './Container'
 
 const Layout = () => {
 
     const List = createBrowserRouter([
         {
             path:'/',
-            element:<Sidebar/>,
+            element:<Navbar/>,
             children:[
                 {
-                    path:'/dashboard',
-                    element:<Dashboard/>,
+                    path:'/',
+                    element:<Container/>,
                     children:[
                         {
-                            path:'card',
-                            element:<Card/>
+                            path:'login',
+                            element:<Login/>
                         },
                         {
-                            path:'history',
-                            element:<History/>
+                            path:'signup',
+                            element:<SignUp/>
                         }
-                    ]  
+                    ], 
                 }
+                // {
+                //     path:'/login',
+                //     element:<Login/>
+                // },
+                // {
+                //     path:'/signup',
+                //     element:<SignUp/>
+                // } 
             ]
         }
     ])
