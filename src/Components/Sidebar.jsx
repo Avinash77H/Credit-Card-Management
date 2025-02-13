@@ -3,10 +3,11 @@ import { NavLink } from 'react-router-dom'
 import { MdHome , MdDashboardCustomize } from "react-icons/md";
 
 const Sidebar = () => {
+  
   return (
-    <div className='border-2 border-black w-fit'>
+    <div className='border-2 border-red-500 bg-blue-300 w-fit h-screen'>
       <div className='flex justify-between'>
-        <div className='bg-blue-300 w-52 h-dvw'>
+        <div className=' w-52'>
           <div className='mx-5'>
             <ul>
               <li className='my-3'><NavLink to='/home' className='flex text-xl'><MdHome className='size-7 mt-0.5 mx-2'/>Home</NavLink></li>
