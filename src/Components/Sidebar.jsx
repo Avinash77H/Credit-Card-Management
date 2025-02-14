@@ -1,42 +1,101 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { MdHome , MdDashboardCustomize } from "react-icons/md";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { IoIosArrowDown, IoIosArrowUp, IoIosCreate } from "react-icons/io";
+import { MdCreateNewFolder } from "react-icons/md";
 
-const Sidebar = () => {
-  
+function Sidebar() {
+
+  /* DashBoard */
+  const [isDashBoard, setIsDashBoard] = useState(false);
+
+  const toggleDashBoard = () => {
+    setIsDashBoard(!isDashBoard);
+  };
+
+  /* Manage Card */
+  const [isManageCard, setIsManageCard] = useState(false);
+
+  const toggleManageCard = () => {
+    setIsManageCard(!isManageCard);
+  };
+
   return (
-    <div className='border-2 border-red-500 bg-blue-300 w-fit h-screen'>
-      <div className='flex justify-between'>
-        <div className=' w-52'>
-          <div className='mx-5'>
-            <ul>
-              <li className='my-3'><NavLink to='/home' className='flex text-xl'><MdHome className='size-7 mt-0.5 mx-2'/>Home</NavLink></li>
-              <li><NavLink to='/dashboard' className='flex text-xl'><MdDashboardCustomize className='size-6 mt-0.5 mx-2'/>Dashboard</NavLink></li>
-              {/* <li className='my-3 relative'><NavLink to='/dashboard'>Dashboard</NavLink>
-              <div className='absolute hidden'>
-                <li className='my-3 block'><NavLink to='card'>Card</NavLink></li>
-                <li className='my-3 block'><NavLink to='history'>History</NavLink></li>
-              </div>
-            </li> */}
-              {/* <li className='relative group'>
-              <NavLink to="/dashboard" className='flex'>
-                Dashboard
+    <div className="w-64">
+      <div className="h-screen bg-[#A3D1C6] flex flex-col shadow-lg">
+        {/* <div className="p-6">
+          <h1 className="text-2xl font-bold text-[#3D8D7A]">Menu</h1>
+        </div> */}
+        <nav className="flex flex-col p-4 space-y-2">
+          <NavLink
+            to="/home"
+            className="hover:bg-[#3D8D7A] p-2 cursor-pointer rounded transition duration-200 hover:text-white"
+          >
+            Home
+          </NavLink>
+
+          {/* DashBoard */}
+
+          <div>
+            <div
+              onClick={toggleDashBoard}
+              className="p-2 cursor-pointer rounded transition duration-200 flex items-center gap-2 hover:bg-[#3D8D7A] hover:text-white"
+            >
+              Dashboard {isDashBoard ? <IoIosArrowUp /> : <IoIosArrowDown />}
+            </div>
+            <div
+              className={`flex flex-col space-y-2 transform transition-all duration-300 ease-in-out ${isDashBoard
+                ? "max-h-40 opacity-100 mt-2"
+                : "max-h-0 opacity-0"
+                } overflow-hidden`}
+            >
+              <NavLink
+                to="dashboard/cardpage"
+                className="p-2 rounded pl-4 transition duration-200  hover:bg-[#3D8D7A] hover:text-white"
+              >
+                Cards
               </NavLink>
-              <div className='absolute hidden group-hover:block z-10 p-2 pt-7'>
-                <NavLink to="/card" className='block bg-white p-2'>
-                  Card
-                </NavLink>
-                <NavLink to="/history" className='block bg-white p-2'>
-                  History
-                </NavLink>
-              </div>
-            </li> */}
-            </ul>
+              <NavLink
+                to="dashboard/history"
+                className="p-2 rounded pl-4 transition duration-200  hover:bg-[#3D8D7A] hover:text-white"
+              >
+                History
+              </NavLink>
+            </div>
           </div>
-        </div>
+
+          {/* Manage Card */}
+
+          <div>
+            <div
+              onClick={toggleManageCard}
+              className="p-2 cursor-pointer rounded transition duration-200 flex items-center gap-2 hover:bg-[#3D8D7A] hover:text-white"
+            >
+              Manage Card {isManageCard ? <IoIosArrowUp /> : <IoIosArrowDown />}
+            </div>
+            <div
+              className={`flex flex-col space-y-2 transform transition-all duration-300 ease-in-out ${isManageCard
+                ? "max-h-40 opacity-100 mt-2"
+                : "max-h-0 opacity-0"
+                } overflow-hidden`}
+            >
+              <NavLink
+                to="managecard/createcard"
+                className="p-2 rounded pl-4 transition duration-200  hover:bg-[#3D8D7A] hover:text-white flex items-center gap-2"
+              >
+                Create Card <MdCreateNewFolder />
+              </NavLink>
+              <NavLink
+                to="managecard/modifycard"
+                className="p-2 rounded pl-4 transition duration-200  hover:bg-[#3D8D7A] hover:text-white flex items-center gap-2"
+              >
+                Modify Card <IoIosCreate />
+              </NavLink>
+            </div>
+          </div>
+        </nav>
       </div>
     </div>
-  )
+  );
 }
 
-export default Sidebar
+export default Sidebar;
