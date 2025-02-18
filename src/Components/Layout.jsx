@@ -11,80 +11,85 @@ import History from '../Pages/History'
 import ManageCard from '../Pages/ManageCard'
 import CreateCard from '../Pages/CreateCard'
 import ModifyCard from '../Pages/ModifyCard'
+import AddExpense from '../Pages/AddExpense'
 
 
 const Layout = () => {
 
-    const List = createBrowserRouter([
+  const List = createBrowserRouter([
+    {
+      path: "/",
+      element: <Navbar />,
+      children: [
         {
-            path:"/",
-            element:<Navbar/>,
-            children:[
-              {
-                path:"/",
-                element:<Container/>,
-                children:[
-                  
-                    {
-                      path:"/login",
-                      element:<Login/>
-                    },
-                    {
-                      path:"/signup",
-                      element:<SignUp/>
-                    },
-                    {
-                      path:'/home',
-                      element:<Home/>
-                    },
-                    {
-                      path:'/dashboard',
-                      element:<Dashboard/>,
-                      children:[
-                        {
-                          index:true,
-                          element:<CardPage/>
-                        },
-                        {
-                          path: "cardpage",
-                          element: <CardPage />,
-                        },
-                        {
-                          path:'history',
-                          element:<History/>
-                        }
-                      ]
-                    },
-                    {
-                      path:'/managecard',
-                      element:<ManageCard/>,
-                      children:[
-                        {
-                          index:true,
-                          element:<CreateCard/>
-                        },
-                        {
-                          path: "createcard",
-                          element: <CreateCard />,
-                        },
-                        {
-                          path:'modifycard',
-                          element:<ModifyCard/>
-                        }
-                      ]
-                    }
-                  
-                ],
-                
-              }
-             
-             
-            ]
-          }
-        ])
+          path: "/",
+          element: <Container />,
+          children: [
+
+            {
+              path: "/login",
+              element: <Login />
+            },
+            {
+              path: "/signup",
+              element: <SignUp />
+            },
+            {
+              path: '/home',
+              element: <Home />
+            },
+            {
+              path: '/dashboard',
+              element: <Dashboard />,
+              children: [
+                {
+                  index: true,
+                  element: <CardPage />
+                },
+                {
+                  path: "cardpage",
+                  element: <CardPage />,
+                },
+                {
+                  path: 'history',
+                  element: <History />
+                }
+              ]
+            },
+            {
+              path: '/managecard',
+              element: <ManageCard />,
+              children: [
+                {
+                  index: true,
+                  element: <CreateCard />
+                },
+                {
+                  path: "createcard",
+                  element: <CreateCard />,
+                },
+                {
+                  path: 'modifycard',
+                  element: <ModifyCard />
+                }
+              ]
+            },
+            {
+              path:'/addExpense',
+              element:<AddExpense/>
+            }
+
+          ],
+
+        }
+
+
+      ]
+    }
+  ])
   return (
     <div>
-        <RouterProvider router={List}></RouterProvider>
+      <RouterProvider router={List}></RouterProvider>
     </div>
   )
 }

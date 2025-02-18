@@ -20,21 +20,20 @@ function Sidebar() {
   };
 
   return (
-    <div className="w-64">
-      <div className="h-screen bg-[#A3D1C6] flex flex-col shadow-lg">
+    <div className="">
+      <div className="h-screen w-64 bg-[#A3D1C6] flex flex-col shadow-lg">
         {/* <div className="p-6">
           <h1 className="text-2xl font-bold text-[#3D8D7A]">Menu</h1>
         </div> */}
         <nav className="flex flex-col p-4 space-y-2">
           <NavLink
             to="/home"
-            className="hover:bg-[#3D8D7A] p-2 cursor-pointer rounded transition duration-200 hover:text-white"
+            className="w-full hover:bg-[#3D8D7A] p-2 cursor-pointer rounded transition duration-200 hover:text-white"
           >
             Home
           </NavLink>
 
           {/* DashBoard */}
-
           <div>
             <div
               onClick={toggleDashBoard}
@@ -64,7 +63,6 @@ function Sidebar() {
           </div>
 
           {/* Manage Card */}
-
           <div>
             <div
               onClick={toggleManageCard}
@@ -82,16 +80,25 @@ function Sidebar() {
                 to="managecard/createcard"
                 className="p-2 rounded pl-4 transition duration-200  hover:bg-[#3D8D7A] hover:text-white flex items-center gap-2"
               >
-                Create Card <MdCreateNewFolder />
+                Create Card <MdCreateNewFolder className="mt-0.5"/>
               </NavLink>
               <NavLink
                 to="managecard/modifycard"
                 className="p-2 rounded pl-4 transition duration-200  hover:bg-[#3D8D7A] hover:text-white flex items-center gap-2"
               >
-                Modify Card <IoIosCreate />
+                Modify Card <IoIosCreate className="mt-0.5"/>
               </NavLink>
             </div>
           </div>
+
+          {/* Add expense */}
+          <NavLink
+            to="/addExpense"
+            className="hover:bg-[#3D8D7A] p-2 cursor-pointer rounded transition duration-200 hover:text-white"
+          >
+            Add Expense
+          </NavLink>
+
         </nav>
       </div>
     </div>

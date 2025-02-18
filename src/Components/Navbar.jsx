@@ -5,7 +5,7 @@ import CardLogo from '../assets/CardLogo.png'
 function Navbar() {
   return (
     <div>
-      <nav className='flex justify-between items-center bg-[#3D8D7A] text-white shadow-lg h-20'>
+      <nav className='sticky top-0 flex justify-between items-center bg-[#3D8D7A] text-white shadow-lg h-20'>
         <div className='flex items-center'>
           <img src={CardLogo} alt="card-image" className='size-28 rounded-full ml-10' />
           {/* <span className='ml-2 text-2xl font-semibold'>Credit</span> */}
