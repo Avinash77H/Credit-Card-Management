@@ -83,7 +83,7 @@ const CreateCard = () => {
             </button>
             <button
               type="submit"
-              className="px-4 py-2 bg-[#3D8D7A] text-white rounded-md hover:bg-[#578E7E]  focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="px-4 py-2 bg-[#3D8D7A] text-white rounded-md hover:bg-[#578E7E]"
             >
               Add Card
             </button>

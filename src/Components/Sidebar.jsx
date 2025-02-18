@@ -21,7 +21,7 @@ function Sidebar() {
 
   return (
     <div className="">
-      <div className="h-screen w-64 bg-[#A3D1C6] flex flex-col shadow-lg">
+      <div className="h-screen w-64 bg-[#A3D1C6] flex flex-col shadow-lg lg:w-52 md:w-46">
         {/* <div className="p-6">
           <h1 className="text-2xl font-bold text-[#3D8D7A]">Menu</h1>
         </div> */}
