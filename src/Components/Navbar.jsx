@@ -10,7 +10,7 @@ function Navbar() {
         <div className='flex items-center'>
           <img src={CardLogo} alt="card-image" className='size-16 rounded-full ml-10 hidden sm:block' />
           <RxHamburgerMenu className='sm:hidden ml-4'/>
-          {/* <span className='ml-2 text-2xl font-semibold'>Credit</span> */}
+          {/* <span className='ml-2 text-2xl font-semibold'>Credit</span> */ }
         </div>
         
         <div className='mr-10'>
